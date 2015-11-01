@@ -1,34 +1,44 @@
+//Hogwarts 5
+
+
+//ANIMATION (thanks http://www.sitepoint.com/guide-jquery-animate-method/ for the help!)
+
+
+/////
+
+
+
 var gamestuff = {
     name: "name here",
-    stamina: 5000
+    meters: 5000
 };
 
 function Player(options) {
     //  var options = options || {};
     this.name = options.name || "A. Person";
-    this.stamina = options.stamina || 100;
+    this.meters = options.meters || 1;
     this.spell = new Spell({
         name: "slow",
-        damage: 7
+        damage: -7
     });
     this.use = function(spell) {
         this.spell = spell;
     };
-    //attacking function
-    this.attack = function(enemy) {
-        var randomInt = Math.floor(Math.random() * 15);
-        if (randomInt < 7) {
-            enemy.stamina = enemy.stamina - this.spell.damage;
-            console.log("That magic got you " + enemy.name +
-                ", your stamina is now " + enemy.stamina);
-            if (enemy.stamina <= 0) {
-                enemy.stamina = 0;
+    //casting function
+    this.cast = function(enemy) {
+        var randomInt = Math.floor(Math.random() * 12);
+        if (randomInt < 4) {
+            enemy.meters = enemy.meters - this.spell.damage;
+            console.log("That magic is super effective! " + enemy.name +
+                " has " + enemy.meters + " to go!");
+            if (enemy.meters <= 0) {
+                enemy.meters = 0;
                 console.log(
-                    "Your out of running juice! Better luck next time " +
+                    "Your made it to the end first! You wizard athleticism is unrivaled!" +
                     enemy.name);
             }
         } else {
-            console.log("You got lucky! Keep it up! " + enemy.name);
+            console.log("The spell missed" + enemy.name);
         }
 
     };
@@ -37,17 +47,17 @@ function Player(options) {
 this.heal = function(enemy) {
     var heal = Math.floor(Math.random() * 7);
     if (heal < 7) {
-        enemy.stamina = enemy.stamina + this.spell.damage;
+        enemy.meters = enemy.meters + this.spell.damage;
         console.log("Good call on the heals " + enemy.name +
-            ", your stamina is now " + enemy.stamina);
-        if (enemy.stamina <= 0) {
-            enemy.stamina = 0;
+            ", your meters is now " + enemy.meters);
+        if (enemy.meters <= 0) {
+            enemy.meters = 0;
             console.log(
-                "Your out of running juice! Better luck next time " +
-                enemy.name);
+              "You made it to the end first! You wizard athleticism is unrivaled!" +
+              enemy.name);
               }
             }  else {
-                    console.log("oh no! Heal failed for " + enemy.name);
+                    console.log("oh no! Your spell failed " + enemy.name);
                 }
 
 };
@@ -61,14 +71,14 @@ function Spell(options) {
 
 function Magic() {}
 var harrypotter = new Player({
-    stamina: 7000,
+    meters: 5000,
     name: "Harry Potter"
 });
 
 
-var merlin = new Player({
-    stamina: 6000,
-    name: "Merlin"
+var hermoine = new Player({
+    meters: 5000,
+    name: "hermoine"
 });
 var slowbolt = new Spell({
     damage: 2000,
@@ -79,10 +89,15 @@ var jellylegs = new Spell({
     name: "jellylegs"
 });
 
-var refreshment = new Spell({
-    damage: 3000,
-    name: "powerbar"
+var haste = new Spell({
+    damage: -3000,
+    name: "haste"
 });
 
-harrypotter.use(jellylegs);
-Merlin.use(slowbolt);
+var teleport = new Spell({
+    damage: 3000,
+    name: "teleport"
+});
+
+harrypotter.use(teleport);
+hermoine.use(slowbolt);
