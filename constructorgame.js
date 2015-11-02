@@ -1,7 +1,10 @@
-//Hogwarts 5
+  //Hogwarts 5
 
 
-//ANIMATION (thanks http://www.sitepoint.com/guide-jquery-animate-method/ for the help!)
+//MONSTER ANIMATION
+
+
+
 
 
 /////
@@ -10,15 +13,15 @@
 
 var gamestuff = {
     name: "name here",
-    meters: 5000
+    health: 5000
 };
 
 function Player(options) {
     //  var options = options || {};
     this.name = options.name || "A. Person";
-    this.meters = options.meters || 1;
+    this.health = options.health || 1;
     this.spell = new Spell({
-        name: "slow",
+        name: "strike",
         damage: -7
     });
     this.use = function(spell) {
@@ -27,15 +30,15 @@ function Player(options) {
     //casting function
     this.cast = function(enemy) {
         var randomInt = Math.floor(Math.random() * 12);
-        if (randomInt < 4) {
-            enemy.meters = enemy.meters - this.spell.damage;
-            console.log("That magic is super effective! " + enemy.name +
-                " has " + enemy.meters + " to go!");
-            if (enemy.meters <= 0) {
-                enemy.meters = 0;
+        if (randomInt < 2) {
+            enemy.health = enemy.health - this.spell.damage;
+            console.log("That attack is super effective! " + enemy.name +
+                " has " + enemy.health+"!");
+            if (enemy.health <= 0) {
+                enemy.health = 0;
                 console.log(
-                    "Your made it to the end first! You wizard athleticism is unrivaled!" +
-                    enemy.name);
+                    "You are dead! Game over" +
+                    enemy.name + "!" );
             }
         } else {
             console.log("The spell missed" + enemy.name);
@@ -44,60 +47,65 @@ function Player(options) {
     };
 
 
-this.heal = function(enemy) {
-    var heal = Math.floor(Math.random() * 7);
-    if (heal < 7) {
-        enemy.meters = enemy.meters + this.spell.damage;
-        console.log("Good call on the heals " + enemy.name +
-            ", your meters is now " + enemy.meters);
-        if (enemy.meters <= 0) {
-            enemy.meters = 0;
-            console.log(
-              "You made it to the end first! You wizard athleticism is unrivaled!" +
-              enemy.name);
-              }
-            }  else {
-                    console.log("oh no! Your spell failed " + enemy.name);
-                }
 
-};
+
+
+
 
 }
 
 function Spell(options) {
-    this.name = options.name || "slow";
+    this.name = options.name || "strike";
     this.damage = options.damage;
 }
 
 function Magic() {}
-var harrypotter = new Player({
-    meters: 5000,
-    name: "Harry Potter"
+var hero1 = new Player({
+    health: 8000,
+    name: "Sword Hero"
+});
+
+var monster = new Player({
+    health: 50000,
+    name: "Evil Monster"
 });
 
 
-var hermoine = new Player({
-    meters: 5000,
-    name: "hermoine"
+var hero2 = new Player({
+    health: 8000,
+    name: "Axe Hero"
 });
-var slowbolt = new Spell({
+var strike = new Spell({
     damage: 2000,
-    name: "slowbolt"
+    name: "strike"
 });
-var jellylegs = new Spell({
+var jab = new Spell({
     damage: 1500,
-    name: "jellylegs"
+    name: "jab"
 });
 
-var haste = new Spell({
-    damage: -3000,
-    name: "haste"
+var heal = new Spell({
+    damage: -10000,
+    name: "heal"
 });
 
-var teleport = new Spell({
+var heavyblow = new Spell({
     damage: 3000,
-    name: "teleport"
+    name: "heavyblow"
 });
 
-harrypotter.use(teleport);
-hermoine.use(slowbolt);
+var firebreath = new Spell({
+    damage: 1000,
+    name: "firebreath"
+});
+
+hero1.use(heavyblow);
+hero2.use(strike);
+badguy.use(firebreath);
+
+
+$('.attack-button').on('click', function(event){
+  event.preventDefault();
+  $('.hero2dimensions').toggleClass('hidden');
+  // $('.hero2-container').html("<img src='" + attack-animationhero2.gif + "'>");
+});

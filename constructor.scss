@@ -1,29 +1,31 @@
 
 // //animation background thanks goes to http://codepen.io/carpenumidium/pen/vNNzyG
 
+
+
 html {
 	height: 100%;
 	 max-height: 600px;
 	width: 1000px;
 	background-color: hsla(200,40%,30%,.4);
 	background-image:
-		url('http://www.clker.com/cliparts/q/L/o/j/C/Q/forest-hi.png'),
-		url('http://www.inserthtml.com/parallax/trees.png'),
-		url('http://i.imgur.com/jF6lRZ2.png'),
-		url('http://www.augstudy.com/images/theme/impress/bg_mountains.png'),
-		url('http://i.imgur.com/58PlA6F.png');
+		url('http://treasuresofarcania.com/wp-content/uploads/2015/01/Grass-and-Dirt-2.0.png'),
+		url('http://i.imgur.com/CXcV8Yh.png'),
+		url('http://img08.deviantart.net/684d/i/2008/046/2/c/clouds___high_speed_pixel_art_by_harunaakatsuki.png'),
+		url('http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter22-Background/mountns.png'),
+		url('http://38.media.tumblr.com/d107d95ea184b0f72ac9f4b4f3dff131/tumblr_n74schTsHd1snc5kxo1_500.gif');
 	background-repeat: repeat-x;
 	background-position:
-		0 20%,
+		0 144%,
 		0 95%,
 		0 0,
 		0 100%,
 		0 0;
 	background-size:
-		2500px,
-		800px,
-		500px 200px,
-		1000px,
+		200px,
+		640px,
+		600px 200px,
+		480px,
 		400px 260px;
 	animation: 50s para infinite linear;
 	}
@@ -31,25 +33,92 @@ html {
 @keyframes para {
 	100% {
 		background-position:
-			-5000px 20%,
-			-800px 95%,
+			-5000px 144%,
+			-1000px 95%,
 			500px 0,
-			1000px 100%,
+			-300px 100%,
 			400px 0;
 		}
 	}
 //animation background end
 
-body {
-  background: #24aecd; }
 
-.monster {
-  width: 190px;
-  height: 240px;
-  margin: 2% auto;
-  background: url("http://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/blog/monster.png") left center;
-  animation: play 0.8s steps(10) infinite; }
+.character-container {
+	height:500px;
+	width: 120%;
+	display: inline-block;
+}
 
-@keyframes play {
-  100% {
-    background-position: -1900px; } }
+//herostarts here
+.hero1-container {
+	display: inline-block;
+	width:10%;
+}
+
+.hero2-container {
+	display: inline-block;
+	width:10%;
+}
+
+.hero1dimensions {
+width: 160px;
+height: 160px;
+position: relative;
+top: -10px;
+
+
+}
+
+.hero2dimensions {
+width: 160px;
+height: 160px;
+position: relative;
+top: -10px;
+
+}
+
+//HERO Attack Animation//
+
+
+
+
+
+
+
+
+// //hero ends here
+
+//MONSTER STARTS HERE
+
+.monster-container {
+	display:inline-block;
+	width: 28%;
+	height: 28%;
+
+}
+
+.monsterdimensions {
+	width: 600px;
+	height: 600px;
+
+
+}
+
+.button-container {
+	display: inline-block;
+	position: relative;
+	top: -180px;
+	left: 30px;
+	border: solid;
+	border-radius: 20px;
+	border-color: white;
+    background: navy;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+
+}
+
+.hidden {
+	display: none;
+}
