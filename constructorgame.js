@@ -101,11 +101,34 @@ var firebreath = new Spell({
 
 hero1.use(heavyblow);
 hero2.use(strike);
-badguy.use(firebreath);
+monster.use(firebreath);
 
-
+//ATTACK ANIMATION HERO
 $('.attack-button').on('click', function(event){
   event.preventDefault();
-  $('.hero2dimensions').toggleClass('hidden');
-  // $('.hero2-container').html("<img src='" + attack-animationhero2.gif + "'>");
+  $('.hero2-container').html("<img src='attack-animation-hero2.gif'>");
+  $('.hero2-container').addClass('active');
+  setTimeout(
+  function()
+  {
+  $('.hero2-container').html("<img src='default-animation-hero2.gif'>");
+  }, 2000);
+  hero2.cast(strike);
 });
+//ATTACK ANIMATION HERO END
+
+
+
+//CAST ANIMATION HERO
+$('.magic-button').on('click', function(event){
+  event.preventDefault();
+  $('.hero2-container').html("<img src='casting-animation-hero2.gif'>");
+  setTimeout(
+  function()
+  {
+  $('.hero2-container').html("<img src='default-animation-hero2.gif'>");
+}, 1200);
+
+});
+
+//CAST ANIMATION HERO end

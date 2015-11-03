@@ -16,7 +16,8 @@ html {
 .character-container {
   height: 500px;
   width: 120%;
-  display: inline-block; }
+  display: inline-block;
+  position: relative; }
 
 .hero1-container {
   display: inline-block;
@@ -24,7 +25,17 @@ html {
 
 .hero2-container {
   display: inline-block;
-  width: 10%; }
+  width: 20%;
+  position: relative;
+  top: -10px; }
+
+.hero2-container.active {
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: .5s;
+  animation-iteration-count: 1;
+  animation-direction: alternate; }
 
 .hero1dimensions {
   width: 160px;
@@ -33,10 +44,40 @@ html {
   top: -10px; }
 
 .hero2dimensions {
-  width: 160px;
-  height: 160px;
+  width: 100%; }
+
+@keyframes slide {
+  25% {
+    right: 200px;
+    top: -250px; }
+  0% {
+    top: 1px;
+    right: 200px; }
+  0% {
+    right: 0px;
+    top: 0px; } }
+
+.stage {
+  background: #eaeaed;
+  border-radius: 6px;
+  height: 150px;
   position: relative;
-  top: -10px; }
+  min-width: 538px; }
+
+.stage:hover .ball {
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: alternate; }
+
+.ball {
+  background: #2db34a;
+  border-radius: 50%;
+  height: 50px;
+  position: absolute;
+  width: 50px; }
 
 .monster-container {
   display: inline-block;
