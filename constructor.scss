@@ -41,11 +41,19 @@ html {
 		}
 	}
 //animation background end
+.introscreen{
+	width:100%;
+	height: 100%;
+}
 
+
+.battle-logue {
+	color: white;
+}
 
 .character-container {
-	height:500px;
-	width: 120%;
+
+	width: 150%;
 	display: inline-block;
 	position: relative;
 }
@@ -53,77 +61,52 @@ html {
 //herostarts here
 .hero1-container {
 	display: inline-block;
-	width:10%;
+	position: relative;
+	top: -10px;
+
 }
+
+
+.hero1-container.active {
+animation-name: slide;
+animation-duration: 1.5s;
+animation-timing-function: ease-in-out;
+animation-delay: .75s;
+animation-iteration-count: 1;
+animation-direction: alternate;
+}
+
 
 .hero2-container {
 	display: inline-block;
-	width:20%;
 	position: relative;
 	top: -10px;
 }
 
 .hero2-container.active {
 	animation-name: slide;
-	animation-duration: 2s;
+	animation-duration: 1.5s;
 	animation-timing-function: ease-in-out;
-	animation-delay: .5s;
+	animation-delay: .75s;
 	animation-iteration-count: 1;
 	animation-direction: alternate;
 }
 
-.hero1dimensions {
-width: 160px;
-height: 160px;
-position: relative;
-top: -10px;
 
-
-}
-
-.hero2dimensions {
-width: 100%;
-}
 
 //HERO Attack Animation//
 
 @keyframes slide {
-  25% {
-    right: 200px;
-    top: -250px;
-  }
-	0% {
-		top: 1px;
-		right: 200px;
-	}
-  0% {
-    right: 0px;
-    top: 0px;
+
+	50% 	{
+    right: 150px;
+    top: -150px;
   }
 }
 
-.stage {
-  background: #eaeaed;
-  border-radius: 6px;
-  height: 150px;
-  position: relative;
-  min-width: 538px;
-}
-.stage:hover .ball {
-  animation-name: slide;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 1s;
-  animation-iteration-count: 1;
-  animation-direction: alternate;
-}
-.ball {
-  background: #2db34a;
-  border-radius: 50%;
-  height: 50px;
-  position: absolute;
-  width: 50px;
-}
+
+
+
 
 
 
@@ -135,17 +118,20 @@ width: 100%;
 
 .monster-container {
 	display:inline-block;
-	width: 28%;
+	 width: 18%;
 	height: 28%;
 
 }
 
-.monsterdimensions {
-	width: 600px;
-	height: 600px;
-
-
+.monsterfireball-container {
+	display: inline-block;
+	position: relative;
+	top: 120px;
+	left: -480px;
+	width: 1px;
+	height:1px;
 }
+
 
 .button-container {
 	display: inline-block;
@@ -159,8 +145,9 @@ width: 100%;
     padding: 20px;
     width: 200px;
     height: 150px;
-
 }
+
+
 
 .hidden {
 	display: none;
