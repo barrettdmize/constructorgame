@@ -13,17 +13,17 @@ html {
   100% {
     background-position: -5000px 144%, -1000px 95%, 500px 0, -300px 100%, 400px 0; } }
 
-.introscreen {
-  width: 100%;
-  height: 100%; }
-
 .battle-logue {
   color: white; }
 
 .character-container {
-  width: 150%;
+  width: 1000%;
   display: inline-block;
   position: relative; }
+
+.everything-container {
+  width: 3000px;
+  display: inline-block; }
 
 .hero1-container {
   display: inline-block;
@@ -58,8 +58,16 @@ html {
 
 .monster-container {
   display: inline-block;
-  width: 18%;
+  width: 11%;
   height: 28%; }
+
+.hero-spell-container {
+  display: inline-block;
+  position: relative;
+  top: -100px;
+  left: 100px;
+  width: 1px;
+  height: 1px; }
 
 .monsterfireball-container {
   display: inline-block;
@@ -70,10 +78,11 @@ html {
   height: 1px; }
 
 .button-container {
+  color: white;
   display: inline-block;
   position: relative;
   top: -180px;
-  left: 30px;
+  left: 0px;
   border: solid;
   border-radius: 20px;
   border-color: white;
@@ -81,6 +90,14 @@ html {
   padding: 20px;
   width: 200px;
   height: 150px; }
+
+.opening {
+  width: 1300px;
+  height: 800px; }
+
+.menupic {
+  width: 1300px;
+  height: 800px; }
 
 .hidden {
   display: none; }
