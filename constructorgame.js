@@ -24,7 +24,7 @@ function monsterdeath(enemy) {
 
         $('.hero-spell-container').html("<img src='lefttorightexplosion.gif'>");
 
-          window.alert("YOU WIN! Thanks for playing!");
+          window.alert("Click that 'ok' button and wait a few sec. YOU WIN! Thanks for playing!");
           setTimeout(
           function()
           {
@@ -44,7 +44,7 @@ function monsterdeath(enemy) {
   setTimeout(
   function()
   {
-    $('.opening').html("<img class = 'menupic' src='bro-fist-final.gif'>");
+    $('.opening').html("<img class = 'menupic' src='fistbump.png'>");
     $('.opening').fadeIn("<img src='http://www.cannotbetamed.com/wp-content/uploads/2014/10/GameoverSMB.png'>");
     $('.everything-container').addClass('hidden');
   }, 13000);
@@ -144,7 +144,7 @@ function Player(options) {
             hero2.health = parseInt(hero2.health) - parseInt(this.spell.damage);
             this.use(heavyblow);
             var string = "That attack is super effective! ";
-            $('.battle-logue').append(string.concat(hero1.name).concat(" has ").concat(hero1.health.toString()).concat("!"));
+            $('.battle-logue').html(string.concat(hero1.name).concat(" has ").concat(hero1.health.toString()).concat("!"));
             $('.battle-logue').append(string.concat(hero2.name).concat(" has ").concat(hero2.health.toString()).concat("!"));
             if (hero1.health <= 0) {
                 herodeath();
