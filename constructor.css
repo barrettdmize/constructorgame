@@ -92,12 +92,13 @@ html {
   height: 150px; }
 
 .opening {
-  width: 1300px;
+  width: 1600px;
   height: 800px; }
 
 .menupic {
-  width: 1300px;
-  height: 800px; }
+  width: 100%;
+  height: 100%;
+  margin: 0 px; }
 
 .hidden {
   display: none; }
